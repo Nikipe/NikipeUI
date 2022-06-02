@@ -1,6 +1,6 @@
 ## Interface: 90205
 ## Author: Nikipe
-## Version: 0.1
+## Version: 0.1.1
 ## Title: Nikipe's ElvUI Edit
 ## Notes: An ElvUI Edit from Nikipe
 ## RequiredDeps: ElvUI
