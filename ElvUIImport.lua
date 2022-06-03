@@ -10,13 +10,14 @@ function NUI:SetupLayout(layout)
 
 	--LAYOUT GOES HERE
 	if E.Retail then
+		E.db["WT"]["announcement"]["enable"] = false
 		E.db["WT"]["announcement"]["interrupt"]["enable"] = false
 		E.db["WT"]["combat"]["raidMarkers"]["enable"] = false
 		E.db["WT"]["item"]["extraItemsBar"]["bar2"]["anchor"] = "TOPRIGHT"
 		E.db["WT"]["item"]["extraItemsBar"]["enable"] = false
+		E.db["WT"]["maps"]["rectangleMinimap"]["heightPercentage"] = 1
 		E.db["WT"]["misc"]["gameBar"]["enable"] = false
 		E.db["WT"]["quest"]["paragonReputation"]["text"] = "PARAGONPLUS"
-		E.db["WT"]["quest"]["switchButtons"]["font"]["name"] = "Gotham Narrow Ultra"
 		E.db["WT"]["social"]["chatBar"]["enable"] = false
 	end
 	E.db["actionbar"]["bar1"]["backdropSpacing"] = 1
@@ -285,7 +286,6 @@ function NUI:SetupLayout(layout)
 	E.db["datatexts"]["panels"]["MinimapPanel"]["2"] = "Time"
 	E.db["datatexts"]["panels"]["MinimapPanel"]["backdrop"] = false
 	E.db["datatexts"]["panels"]["MinimapPanel"]["border"] = false
-	E.db["datatexts"]["panels"]["MinimapPanel"]["panelTransparency"] = true
 	E.db["datatexts"]["panels"]["RightChatDataPanel"]["enable"] = false
 	E.db["datatexts"]["panels"]["RightMiniPanel"] = "ElvUI Config"
 	E.db["general"]["afk"] = false
@@ -317,7 +317,7 @@ function NUI:SetupLayout(layout)
 	E.db["general"]["valuecolor"]["b"] = 0.72941017150879
 	E.db["general"]["valuecolor"]["g"] = 0.54901838302612
 	E.db["general"]["valuecolor"]["r"] = 0.95686066150665
-	E.db["mMediaTag"]["mPluginVersion"] = "2.78.1"
+	E.db["mMediaTag"]["mPluginVersion"] = "2.80"
 	E.db["mMediaTag"]["mRoleSymbols"]["dd"] = "firenew1"
 	E.db["mMediaTag"]["mRoleSymbols"]["heal"] = "heal1"
 	E.db["mMediaTag"]["mRoleSymbols"]["tank"] = "tank1"
@@ -327,10 +327,14 @@ function NUI:SetupLayout(layout)
 	E.db["mMediaTag"]["mTags"]["dndpath"] = "Interface\\AddOns\\ElvUI_mMediaTag\\media\\misc\\dnd5.tga"
 	E.db["mMediaTag"]["mTags"]["ghostname"] = "SKULL1"
 	E.db["mMediaTag"]["mTags"]["ghostpath"] = "Interface\\AddOns\\ElvUI_mMediaTag\\media\\misc\\skull1.tga"
-	E.db["mMediaTag"]["mTags"]["skullname"] = "SKULL1"
-	E.db["mMediaTag"]["mTags"]["skullpath"] = "Interface\\AddOns\\ElvUI_mMediaTag\\media\\misc\\skull1.tga"
+	E.db["mMediaTag"]["mTags"]["skullname"] = "SKULL6"
+	E.db["mMediaTag"]["mTags"]["skullpath"] = "Interface\\AddOns\\ElvUI_mMediaTag\\media\\misc\\skull6.tga"
 	if not E.db.movers then E.db.movers = {} end
+	E.db["movers"]["BNETMover"] = "TOP,UIParent,TOP,235,-33"
+	E.db["movers"]["BelowMinimapContainerMover"] = "TOPRIGHT,UIParent,TOPRIGHT,-322,-199"
 	E.db["movers"]["BossButton"] = "BOTTOM,UIParent,BOTTOM,316,221"
+	E.db["movers"]["BuffsMover"] = "TOPRIGHT,UIParent,TOPRIGHT,-292,-4"
+	E.db["movers"]["DebuffsMover"] = "TOPRIGHT,UIParent,TOPRIGHT,-292,-150"
 	E.db["movers"]["DurabilityFrameMover"] = "TOPRIGHT,UIParent,TOPRIGHT,-254,-202"
 	E.db["movers"]["ElvUF_PartyMover"] = "TOPLEFT,UIParent,TOPLEFT,358,-401"
 	E.db["movers"]["ElvUF_PlayerMover"] = "BOTTOM,UIParent,BOTTOM,-308,340"
@@ -339,15 +343,21 @@ function NUI:SetupLayout(layout)
 	E.db["movers"]["ElvUF_TargetMover"] = "BOTTOM,ElvUIParent,BOTTOM,308,340"
 	E.db["movers"]["ElvUF_TargetTargetMover"] = "BOTTOM,ElvUIParent,BOTTOM,310,285"
 	E.db["movers"]["HonorBarMover"] = "BOTTOM,ElvUIParent,BOTTOM,0,5"
+	E.db["movers"]["MawBuffsBelowMinimapMover"] = "TOP,UIParent,TOP,234,-85"
 	E.db["movers"]["MicrobarMover"] = "TOP,UIParent,TOP,235,-4"
-	E.db["movers"]["ObjectiveFrameMover"] = "TOPRIGHT,UIParent,TOPRIGHT,-55,-276"
+	E.db["movers"]["MinimapMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,0,0"
+	E.db["movers"]["ObjectiveFrameMover"] = "TOPRIGHT,UIParent,TOPRIGHT,-48,-4"
 	E.db["movers"]["ReputationBarMover"] = "BOTTOM,ElvUIParent,BOTTOM,0,0"
+	E.db["movers"]["RightChatMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,4,4"
 	E.db["movers"]["SquareMinimapButtonBarMover"] = "BOTTOMRIGHT,UIParent,BOTTOMRIGHT,-4,296"
 	E.db["movers"]["TargetPowerBarMover"] = "BOTTOM,UIParent,BOTTOM,310,263"
+	E.db["movers"]["VehicleSeatMover"] = "TOPRIGHT,UIParent,TOPRIGHT,-319,-231"
+	E.db["movers"]["WTMinimapButtonBarAnchor"] = "BOTTOMRIGHT,UIParent,BOTTOMRIGHT,-4,322"
 	E.db["movers"]["ZoneAbility"] = "TOP,UIParent,TOP,77,-515"
+	E.db["nameplates"]["statusbar"] = "KMT63"
 	E.db["tooltip"]["cursorAnchor"] = true
-	E.db["tooltip"]["font"] = "Nimrod MT"
-	E.db["tooltip"]["headerFont"] = "Nimrod MT"
+	E.db["tooltip"]["font"] = "Gotham Narrow Ultra"
+	E.db["tooltip"]["headerFont"] = "Gotham Narrow Ultra"
 	E.db["tooltip"]["visibility"]["combatOverride"] = "SHIFT"
 	E.db["unitframe"]["colors"]["colorhealthbyvalue"] = false
 	E.db["unitframe"]["colors"]["healthclass"] = true
@@ -364,34 +374,51 @@ function NUI:SetupLayout(layout)
 	E.db["unitframe"]["units"]["party"]["showPlayer"] = false
 	E.db["unitframe"]["units"]["player"]["RestIcon"]["enable"] = false
 	E.db["unitframe"]["units"]["player"]["aurabar"]["enable"] = false
+	E.db["unitframe"]["units"]["player"]["buffs"]["attachTo"] = "FRAME"
 	E.db["unitframe"]["units"]["player"]["castbar"]["enable"] = false
 	E.db["unitframe"]["units"]["player"]["castbar"]["width"] = 220
 	E.db["unitframe"]["units"]["player"]["classbar"]["enable"] = false
+	E.db["unitframe"]["units"]["player"]["debuffs"]["attachTo"] = "BUFFS"
 	E.db["unitframe"]["units"]["player"]["health"]["position"] = "BOTTOMRIGHT"
 	E.db["unitframe"]["units"]["player"]["health"]["text_format"] = "[health:current:shortvalue]"
-	E.db["unitframe"]["units"]["player"]["health"]["xOffset"] = 0
+	E.db["unitframe"]["units"]["player"]["health"]["xOffset"] = 3
 	E.db["unitframe"]["units"]["player"]["health"]["yOffset"] = -17
 	E.db["unitframe"]["units"]["player"]["height"] = 26
-	E.db["unitframe"]["units"]["player"]["name"]["position"] = "TOPRIGHT"
+	E.db["unitframe"]["units"]["player"]["name"]["position"] = "TOPLEFT"
 	E.db["unitframe"]["units"]["player"]["name"]["text_format"] = "[name:short]"
 	E.db["unitframe"]["units"]["player"]["name"]["yOffset"] = 15
 	E.db["unitframe"]["units"]["player"]["power"]["detachedWidth"] = 74
 	E.db["unitframe"]["units"]["player"]["power"]["enable"] = false
+	E.db["unitframe"]["units"]["player"]["raidRoleIcons"]["position"] = "TOPRIGHT"
+	E.db["unitframe"]["units"]["player"]["raidRoleIcons"]["yOffset"] = 5
 	E.db["unitframe"]["units"]["player"]["width"] = 220
+	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["attachTextTo"] = "Health"
+	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["enable"] = true
+	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["font"] = "Gotham Narrow Ultra"
+	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["fontOutline"] = "THICKOUTLINE"
+	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["justifyH"] = "CENTER"
+	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["size"] = 15
+	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["text_format"] = "[name:short]"
+	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["xOffset"] = 0
+	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["yOffset"] = 0
 	E.db["unitframe"]["units"]["raid"]["health"]["position"] = "TOP"
 	E.db["unitframe"]["units"]["raid"]["name"]["position"] = "BOTTOM"
 	E.db["unitframe"]["units"]["raid"]["roleIcon"]["position"] = "TOPLEFT"
+	E.db["unitframe"]["units"]["raid40"]["height"] = 30
+	E.db["unitframe"]["units"]["raid40"]["name"]["text_format"] = "[name:short]"
+	E.db["unitframe"]["units"]["raid40"]["width"] = 100
 	E.db["unitframe"]["units"]["target"]["aurabar"]["enable"] = false
 	E.db["unitframe"]["units"]["target"]["buffs"]["countFont"] = "Nimrod MT"
 	E.db["unitframe"]["units"]["target"]["buffs"]["yOffset"] = 15
 	E.db["unitframe"]["units"]["target"]["castbar"]["width"] = 220
-	E.db["unitframe"]["units"]["target"]["health"]["position"] = "BOTTOMLEFT"
+	E.db["unitframe"]["units"]["target"]["health"]["position"] = "BOTTOMRIGHT"
 	E.db["unitframe"]["units"]["target"]["health"]["text_format"] = "[health:current:shortvalue]"
-	E.db["unitframe"]["units"]["target"]["health"]["xOffset"] = 0
+	E.db["unitframe"]["units"]["target"]["health"]["xOffset"] = 3
 	E.db["unitframe"]["units"]["target"]["health"]["yOffset"] = -17
 	E.db["unitframe"]["units"]["target"]["height"] = 26
-	E.db["unitframe"]["units"]["target"]["name"]["position"] = "TOPLEFT"
+	E.db["unitframe"]["units"]["target"]["name"]["position"] = "TOPRIGHT"
 	E.db["unitframe"]["units"]["target"]["name"]["text_format"] = "[name:short] "
+	E.db["unitframe"]["units"]["target"]["name"]["xOffset"] = 7
 	E.db["unitframe"]["units"]["target"]["name"]["yOffset"] = 15
 	E.db["unitframe"]["units"]["target"]["power"]["detachFromFrame"] = true
 	E.db["unitframe"]["units"]["target"]["power"]["detachedWidth"] = 220
@@ -400,6 +427,7 @@ function NUI:SetupLayout(layout)
 	E.db["unitframe"]["units"]["targettarget"]["height"] = 26
 	E.db["unitframe"]["units"]["targettarget"]["name"]["text_format"] = "[name:short]"
 	E.db["unitframe"]["units"]["targettarget"]["power"]["enable"] = false
+
 
 
 
