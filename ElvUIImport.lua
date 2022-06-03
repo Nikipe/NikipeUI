@@ -392,15 +392,6 @@ function NUI:SetupLayout(layout)
 	E.db["unitframe"]["units"]["player"]["raidRoleIcons"]["position"] = "TOPRIGHT"
 	E.db["unitframe"]["units"]["player"]["raidRoleIcons"]["yOffset"] = 5
 	E.db["unitframe"]["units"]["player"]["width"] = 220
-	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["attachTextTo"] = "Health"
-	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["enable"] = true
-	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["font"] = "Gotham Narrow Ultra"
-	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["fontOutline"] = "THICKOUTLINE"
-	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["justifyH"] = "CENTER"
-	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["size"] = 15
-	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["text_format"] = "[name:short]"
-	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["xOffset"] = 0
-	E.db["unitframe"]["units"]["raid"]["customTexts"]["[name:short]"]["yOffset"] = 0
 	E.db["unitframe"]["units"]["raid"]["health"]["position"] = "TOP"
 	E.db["unitframe"]["units"]["raid"]["name"]["position"] = "BOTTOM"
 	E.db["unitframe"]["units"]["raid"]["roleIcon"]["position"] = "TOPLEFT"
