@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.1.2
+
+* Huge Layout updates.
+* Windtools profile complete.
+
 ## Version 0.1.1
 
 * Lots of changes to the ElvUI Layout.
