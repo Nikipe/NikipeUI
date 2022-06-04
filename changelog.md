@@ -2,7 +2,11 @@
 
 ## Version 0.1.3
 
+### Retail
+
 * Reworked BigWigs Profile.
+
+### Classic
 
 ## Version 0.1.2
 
