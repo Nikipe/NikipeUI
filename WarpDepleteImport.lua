@@ -36,6 +36,8 @@ function NUI:SetWarpDepleteProfile()
         ["deathsFont"] = "Gotham Narrow Ultra",
         ["keyFont"] = "Gotham Narrow Ultra",
 		["keyDetailsColor"] = "ff00a3ff",
+        ["forcesOverlayTexture"] = "mMediaTag O1",
+        ["forcesTexture"] = "mMediaTag O1",
 		["keyColor"] = "ff00a3ff",
 	}
 end
