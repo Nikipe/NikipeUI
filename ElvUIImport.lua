@@ -30,6 +30,8 @@ function NUI:SetupLayout(layout)
 		E.db["WT"]["social"]["chatBar"]["enable"] = false
 		E.db["WT"]["social"]["friendList"]["textures"]["factionIcon"] = true
 		E.db["WT"]["social"]["friendList"]["useNoteAsName"] = true
+
+		--private settings import
 		E.private["WT"]["combat"]["talentManager"]["pvpTalent"] = true
 		E.private["WT"]["maps"]["instanceDifficulty"]["enable"] = true
 		E.private["WT"]["maps"]["minimapButtons"]["backdrop"] = false
@@ -42,17 +44,8 @@ function NUI:SetupLayout(layout)
 		E.private["WT"]["quest"]["objectiveTracker"]["cosmeticBar"]["texture"] = "Melli"
 		E.private["WT"]["skins"]["shadow"] = false
 	end
-	E.private["general"]["dmgfont"] = "Gotham Narrow Ultra"
-	E.private["general"]["glossTex"] = "mMediaTag O1"
-	E.private["general"]["namefont"] = "Gotham Narrow Ultra"
-	E.private["general"]["nameplateFont"] = "Gotham Narrow Ultra"
-	E.private["general"]["nameplateLargeFont"] = "Gotham Narrow Ultra"
-	E.private["general"]["normTex"] = "mMediaTag O1"
-	E.private["install_complete"] = 12.77
-	E.private["nameplates"]["enable"] = false
-	E.private["skins"]["parchmentRemoverEnable"] = true
-	E.global["datatexts"]["settings"]["Gold"]["goldCoins"] = false
-	E.global["datatexts"]["settings"]["Gold"]["goldFormat"] = "SHORTINT"
+	
+	--normal ElvUI settings
 	E.db["actionbar"]["bar1"]["backdropSpacing"] = 1
 	E.db["actionbar"]["bar1"]["buttonSize"] = 28
 	E.db["actionbar"]["bar1"]["buttonSpacing"] = 1
@@ -468,7 +461,21 @@ function NUI:SetupLayout(layout)
 	E.db["unitframe"]["units"]["targettarget"]["power"]["enable"] = false
 
 
+	--global settings import
+	E.global["datatexts"]["settings"]["Gold"]["goldCoins"] = false
+	E.global["datatexts"]["settings"]["Gold"]["goldFormat"] = "SHORTINT"
 
+
+	--private settings import
+	E.private["general"]["dmgfont"] = "Gotham Narrow Ultra"
+	E.private["general"]["glossTex"] = "mMediaTag O1"
+	E.private["general"]["namefont"] = "Gotham Narrow Ultra"
+	E.private["general"]["nameplateFont"] = "Gotham Narrow Ultra"
+	E.private["general"]["nameplateLargeFont"] = "Gotham Narrow Ultra"
+	E.private["general"]["normTex"] = "mMediaTag O1"
+	E.private["install_complete"] = 12.77
+	E.private["nameplates"]["enable"] = false
+	E.private["skins"]["parchmentRemoverEnable"] = true
 
 
 	--Niklas don't forget to handle movers
