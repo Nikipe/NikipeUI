@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.1.3
+
+* Reworked BigWigs Profile.
+
 ## Version 0.1.2
 
 * Huge Layout updates.
