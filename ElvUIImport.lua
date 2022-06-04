@@ -362,6 +362,7 @@ function NUI:SetupLayout(layout)
 	E.db["mMediaTag"]["mRoleSymbols"]["dd"] = "firenew1"
 	E.db["mMediaTag"]["mRoleSymbols"]["heal"] = "heart1"
 	E.db["mMediaTag"]["mRoleSymbols"]["tank"] = "tank1"
+	E.db["mMediaTag"]["mTIcon"] = false
 	E.db["mMediaTag"]["mTags"]["afkname"] = "AFK5"
 	E.db["mMediaTag"]["mTags"]["afkpath"] = "Interface\\AddOns\\ElvUI_mMediaTag\\media\\misc\\afk5.tga"
 	E.db["mMediaTag"]["mTags"]["dndname"] = "DND5"
