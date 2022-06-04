@@ -51,6 +51,8 @@ function NUI:SetupLayout(layout)
 	E.private["install_complete"] = 12.77
 	E.private["nameplates"]["enable"] = false
 	E.private["skins"]["parchmentRemoverEnable"] = true
+	E.global["datatexts"]["settings"]["Gold"]["goldCoins"] = false
+	E.global["datatexts"]["settings"]["Gold"]["goldFormat"] = "SHORTINT"
 	E.db["actionbar"]["bar1"]["backdropSpacing"] = 1
 	E.db["actionbar"]["bar1"]["buttonSize"] = 28
 	E.db["actionbar"]["bar1"]["buttonSpacing"] = 1
