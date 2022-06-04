@@ -4,6 +4,8 @@
 
 * Huge Layout updates.
 * Windtools profile complete.
+* Reworked OmniCD Profile.
+* Reworked WarpDeplete Profile.
 
 ## Version 0.1.1
 
