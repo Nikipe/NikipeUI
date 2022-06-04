@@ -122,6 +122,17 @@ local InstallerData = {
 			PluginInstallFrame.Option1:SetText("WeakAuras")
 		end,
 		[7] = function()
+			PluginInstallFrame.SubTitle:SetText("Capping")
+			PluginInstallFrame.Desc1:SetText("Import my Capping Profile")
+			PluginInstallFrame.Option1:Show()
+			PluginInstallFrame.Option1:SetScript("OnClick", function() NUI:SetCappingProfile()
+				E:Print(L["'Capping' profile has been set."])
+				PluginInstallStepComplete.message = "Capping Profile set"
+				PluginInstallStepComplete:Show()
+			end)
+			PluginInstallFrame.Option1:SetText("Capping")
+		end,
+		[8] = function()
 			PluginInstallFrame.SubTitle:SetText("Installation Complete")
 			PluginInstallFrame.Desc1:SetText("You have completed the installation process.")
 			PluginInstallFrame.Desc2:SetText("Please click the button below in order to finalize the process and automatically reload your UI.")
@@ -137,7 +148,8 @@ local InstallerData = {
 		[4] = "Nameplates",
 		[5] = "Details",
 		[6] = "WeakAuras",
-		[7] = "Installation Complete",
+		[7] = "PvP",
+		[8] = "Installation Complete",
 	},
 	StepTitlesColor = { 1, 1, 1 },
 	StepTitlesColorSelected = { 0, 179 / 255, 1 },

@@ -14,3 +14,4 @@ BigWigsImport.lua
 PlaterImport.lua
 WeakAurasImport.lua
 DetailsImport.lua
+CappingImport.lua
