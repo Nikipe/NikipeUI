@@ -6,6 +6,7 @@
 * Windtools profile complete.
 * Reworked OmniCD Profile.
 * Reworked WarpDeplete Profile.
+* Added Capping Profile for casual PvP.
 
 ## Version 0.1.1
 
