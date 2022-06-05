@@ -8,6 +8,9 @@
 
 ### Classic
 
+* Added toc support for both SoM and BCC.
+* Enabled Experience bar since classic does not have an honor bar.
+
 ## Version 0.1.2
 
 ### Retail
@@ -21,6 +24,7 @@
 ### Classic
 
 * Huge Layout updates.
+* Added Capping Profile for casual PvP.
 
 ## Version 0.1.1
 
