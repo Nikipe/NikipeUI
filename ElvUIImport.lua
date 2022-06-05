@@ -4,10 +4,6 @@ local NUI = E:GetModule("Nikipe UI");
 --handling ElvUI import
 
 function NUI:SetupLayout(layout)
-	--[[
-	--	PUT YOUR EXPORTED PROFILE/SETTINGS BELOW HERE
-	--]]
-
 	--LAYOUT GOES HERE
 	if E.Retail then
 		E.db["WT"]["announcement"]["goodbye"]["text"] = "Thank you <3"
@@ -44,7 +40,7 @@ function NUI:SetupLayout(layout)
 		E.private["WT"]["quest"]["objectiveTracker"]["cosmeticBar"]["texture"] = "Melli"
 		E.private["WT"]["skins"]["shadow"] = false
 	end
-	
+
 	--normal ElvUI settings
 	E.db["actionbar"]["bar1"]["backdropSpacing"] = 1
 	E.db["actionbar"]["bar1"]["buttonSize"] = 28
@@ -477,6 +473,32 @@ function NUI:SetupLayout(layout)
 	E.private["nameplates"]["enable"] = false
 	E.private["skins"]["parchmentRemoverEnable"] = true
 
+	--classic only stuff
+	if E.TBC then
+		E.db["databars"]["experience"]["enable"] = true
+		E.db["databars"]["experience"]["textFormat"] = "NONE"
+		E.db["databars"]["colors"]["experience"]["a"] = 1
+		E.db["databars"]["experience"]["font"] = "Gotham Narrow Ultra"
+		E.db["databars"]["experience"]["fontOutline"] = "OUTLINE"
+		E.db["databars"]["experience"]["height"] = 177
+		E.db["databars"]["experience"]["orientation"] = "VERTICAL"
+		E.db["databars"]["experience"]["width"] = 15
+		if not E.db.movers then E.db.movers = {} end
+		E.db["movers"]["ExperienceBarMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-191,21"
+	end
+
+	if E.Classic then
+		E.db["databars"]["experience"]["enable"] = true
+		E.db["databars"]["experience"]["textFormat"] = "NONE"
+		E.db["databars"]["colors"]["experience"]["a"] = 1
+		E.db["databars"]["experience"]["font"] = "Gotham Narrow Ultra"
+		E.db["databars"]["experience"]["fontOutline"] = "OUTLINE"
+		E.db["databars"]["experience"]["height"] = 177
+		E.db["databars"]["experience"]["orientation"] = "VERTICAL"
+		E.db["databars"]["experience"]["width"] = 15
+		if not E.db.movers then E.db.movers = {} end
+		E.db["movers"]["ExperienceBarMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-191,21"
+	end
 
 	--Niklas don't forget to handle movers
 	--if not E.db.movers then E.db.movers = {} end
