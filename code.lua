@@ -40,6 +40,7 @@ local InstallerData = {
 	Title = format("|cff4beb2c%s %s|r", MyPluginName, "Installation"),
 	Name = MyPluginName,
 	tutorialImage = "Interface\\AddOns\\NikipeUI\\logo.tga", --tutorialImage = Interface\\AddOns\\MyAddOn\\logo.tga", --If you have a logo you want to use, otherwise it uses the one from ElvUI
+	
 	Pages = {
 		[1] = function()
 			PluginInstallFrame.SubTitle:SetFormattedText("Welcome to the installation for %s.", MyPluginName)
@@ -55,7 +56,7 @@ local InstallerData = {
 			PluginInstallFrame.Desc2:SetText("Importance: |cff07D400High|r")
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", function() NUI:SetupLayout("tank") end)
-			PluginInstallFrame.Option1:SetText("Tank")
+			PluginInstallFrame.Option1:SetText("Nikipe UI")
 			--PluginInstallFrame.Option2:Show()
 			--PluginInstallFrame.Option2:SetScript("OnClick", function() SetupLayout("healer") end)
 			--PluginInstallFrame.Option2:SetText("Healer")
@@ -63,7 +64,7 @@ local InstallerData = {
 			--PluginInstallFrame.Option3:SetScript("OnClick", function() SetupLayout("dps") end)
 			--PluginInstallFrame.Option3:SetText("DPS")
 		end,
-		[3] = function()
+		[E.Retail and 3] = function()
 			PluginInstallFrame.SubTitle:SetFormattedText("Mythic+ Addons")
 			PluginInstallFrame.Desc1:SetText("Import various profiles for mythic+ addons.")
 			PluginInstallFrame.Option1:Show()
@@ -87,6 +88,28 @@ local InstallerData = {
 				PluginInstallStepComplete:Show()
 			end)
 			PluginInstallFrame.Option3:SetText("BigWigs")
+		end,
+		[E.TBC and 3] = function ()
+			PluginInstallFrame.SubTitle:SetFormattedText("Classic Addons")
+			PluginInstallFrame.Desc1:SetText("Import various profiles for classic WoW The Burning Crusade addons.")
+			PluginInstallFrame.Option1:Show()
+			PluginInstallFrame.Option1:SetScript("OnClick", function() NUI:SetWarpDepleteProfile()
+				E:Print(L["'Questie' profile has been set."])
+				PluginInstallStepComplete.message = "Questie Profile set"
+				PluginInstallStepComplete:Show()
+			end)
+			PluginInstallFrame.Option1:SetText("Questie")
+		end,
+		[E.Classic and 3] = function ()
+			PluginInstallFrame.SubTitle:SetFormattedText("Classic Addons")
+			PluginInstallFrame.Desc1:SetText("Import various profiles for classic era / Season of Mastery addons.")
+			PluginInstallFrame.Option1:Show()
+			PluginInstallFrame.Option1:SetScript("OnClick", function() NUI:SetWarpDepleteProfile()
+				E:Print(L["'Questie' profile has been set."])
+				PluginInstallStepComplete.message = "Questie Profile set"
+				PluginInstallStepComplete:Show()
+			end)
+			PluginInstallFrame.Option1:SetText("Questie")
 		end,
 		[4] = function()
 			PluginInstallFrame.SubTitle:SetFormattedText("Nameplates")
@@ -144,7 +167,9 @@ local InstallerData = {
 	StepTitles = {
 		[1] = "Welcome",
 		[2] = "Layout",
-		[3] = "Mythic+ Addons",
+		[E.Retail and 3] = "Mythic+ Addons",
+		[E.TBC and 3] = "Classic Addons",
+		[E.Classic and 3] = "Classic Addons",
 		[4] = "Nameplates",
 		[5] = "Details",
 		[6] = "WeakAuras",
@@ -157,7 +182,6 @@ local InstallerData = {
 	StepTitleButtonWidth = 180,
 	StepTitleTextJustification = "RIGHT",
 }
-
 --This function holds the options table which will be inserted into the ElvUI config
 local function InsertOptions()
 	E.Options.args.MyPluginName = {
