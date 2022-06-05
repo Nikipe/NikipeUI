@@ -1,0 +1,18 @@
+## Interface: 20504
+## Author: Nikipe
+## Version: 0.1.3
+## Title: Nikipe's ElvUI Edit
+## Notes: An ElvUI Edit from Nikipe
+## RequiredDeps: ElvUI
+## DefaultState: enabled
+
+code.lua
+ElvUIImport.lua
+WarpDepleteImport.lua
+OmniCDImport.lua
+BigWigsImport.lua
+PlaterImport.lua
+WeakAurasImport.lua
+DetailsImport.lua
+CappingImport.lua
+QuestieImport.lua
