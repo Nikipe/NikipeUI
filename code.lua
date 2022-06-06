@@ -40,7 +40,7 @@ local InstallerData = {
 	Title = format("|cff4beb2c%s %s|r", MyPluginName, "Installation"),
 	Name = MyPluginName,
 	tutorialImage = "Interface\\AddOns\\NikipeUI\\logo.tga", --tutorialImage = Interface\\AddOns\\MyAddOn\\logo.tga", --If you have a logo you want to use, otherwise it uses the one from ElvUI
-	
+
 	Pages = {
 		[1] = function()
 			PluginInstallFrame.SubTitle:SetFormattedText("Welcome to the installation for %s.", MyPluginName)
@@ -89,7 +89,7 @@ local InstallerData = {
 			end)
 			PluginInstallFrame.Option3:SetText("BigWigs")
 		end,
-		[E.TBC and 3] = function ()
+		[E.TBC and 3] = function()
 			PluginInstallFrame.SubTitle:SetFormattedText("Classic Addons")
 			PluginInstallFrame.Desc1:SetText("Import various profiles for classic WoW The Burning Crusade addons.")
 			PluginInstallFrame.Option1:Show()
@@ -99,12 +99,26 @@ local InstallerData = {
 				PluginInstallStepComplete:Show()
 			end)
 			PluginInstallFrame.Option1:SetText("Questie")
+			PluginInstallFrame.Option2:Show()
+			PluginInstallFrame.Option2:SetScript("OnClick", function() NUI:SetOmniCDProfile()
+				E:Print(L["OmniCD profile has been set."])
+				PluginInstallStepComplete.message = "OmniCD Profile set"
+				PluginInstallStepComplete:Show()
+			end)
+			PluginInstallFrame.Option2:SetText("OmniCD")
+			PluginInstallFrame.Option3:Show()
+			PluginInstallFrame.Option3:SetScript("OnClick", function() NUI:SetBigWigsProfile()
+				E:Print(L["BigWigs profile has been set."])
+				PluginInstallStepComplete.message = "BigWigs Profile set"
+				PluginInstallStepComplete:Show()
+			end)
+			PluginInstallFrame.Option3:SetText("BigWigs")
 		end,
-		[E.Classic and 3] = function ()
+		[E.Classic and 3] = function()
 			PluginInstallFrame.SubTitle:SetFormattedText("Classic Addons")
 			PluginInstallFrame.Desc1:SetText("Import various profiles for classic era / Season of Mastery addons.")
 			PluginInstallFrame.Option1:Show()
-			PluginInstallFrame.Option1:SetScript("OnClick", function() NUI:SetWarpDepleteProfile()
+			PluginInstallFrame.Option1:SetScript("OnClick", function() NUI:SetQuestieProfile()
 				E:Print(L["'Questie' profile has been set."])
 				PluginInstallStepComplete.message = "Questie Profile set"
 				PluginInstallStepComplete:Show()
