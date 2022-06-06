@@ -4,66 +4,65 @@ local NUI = E:GetModule("Nikipe UI");
 
 --handling OmniCD import
 function NUI:SetOmniCDProfile()
-    OmniCDDB = {
-        ["profileKeys"] = {
-        },
-        ["namespaces"] = {
-            ["LibDualSpec-1.0"] = {
+
+    local Tank = "Nikipe UI Tank"
+
+    OmniCDDB["global"]["disableElvMsg"] = true
+
+    OmniCDDB["profiles"][Tank] = OmniCDDB["profiles"][Tank] or {}
+
+    OmniCDDB["profiles"][Tank]["General"] = {
+        ["fonts"] = {
+            ["statusBar"] = {
+                ["font"] = "Gotham Narrow Ultra",
+                ["flag"] = "OUTLINE",
+            },
+            ["optionSmall"] = {
+                ["font"] = "Gotham Narrow Ultra",
+                ["flag"] = "OUTLINE",
+            },
+            ["anchor"] = {
+                ["font"] = "Gotham Narrow Ultra",
+                ["flag"] = "OUTLINE",
+            },
+            ["icon"] = {
+                ["font"] = "Gotham Narrow Ultra",
+            },
+            ["option"] = {
+                ["font"] = "Gotham Narrow Ultra",
+                ["flag"] = "OUTLINE",
             },
         },
-        ["cooldowns"] = {
+        ["textures"] = {
+            ["statusBar"] = {
+                ["BG"] = "mMediaTag O1",
+                ["bar"] = "mMediaTag O1",
+            },
         },
-        ["version"] = 2.51,
-        ["profiles"] = {
-            ["Default"] = {
-                ["Party"] = {
-                    ["party"] = {
-                        ["extraBars"] = {
-                            ["interruptBar"] = {
-                                ["statusBarWidth"] = 300,
-                                ["locked"] = true,
-                            },
-                        },
-                        ["general"] = {
-                            ["showAnchor"] = true,
-                        },
-                        ["manualPos"] = {
-                            ["interruptBar"] = {
-                                ["y"] = 204.6214824633753,
-                                ["x"] = 388.445131082648,
-                            },
-                        },
-                    },
-                    ["visibility"] = {
-                        ["finder"] = true,
-                    },
+
+    }
+    OmniCDDB["profiles"][Tank]["Party"] = {
+        ["visibility"] = {
+            ["none"] = true,
+            ["scenario"] = true,
+            ["finder"] = true,
+        },
+        ["party"] = {
+            ["extraBars"] = {
+                ["interruptBar"] = {
+                    ["statusBarWidth"] = 200,
+                    ["locked"] = true,
                 },
-                ["General"] = {
-                    ["fonts"] = {
-                        ["statusBar"] = {
-                            ["font"] = "Gotham Narrow Ultra",
-                        },
-                        ["optionSmall"] = {
-                            ["font"] = "Gotham Narrow Ultra",
-                        },
-                        ["anchor"] = {
-                            ["font"] = "Gotham Narrow Ultra",
-                        },
-                        ["icon"] = {
-                            ["font"] = "Gotham Narrow Ultra",
-                        },
-                        ["option"] = {
-                            ["font"] = "Gotham Narrow Ultra",
-                        },
-                    },
-                    ["textures"] = {
-                        ["statusBar"] = {
-                            ["BG"] = "Melli",
-                            ["bar"] = "Melli",
-                        },
-                    },
+            },
+            ["manualPos"] = {
+                ["interruptBar"] = {
+                    ["x"] = 440.0719823511245,
+                    ["y"] = 189.0480426494469,
                 },
             },
         },
     }
+    OmniCDDB["profileKeys"][E.mynameRealm] = Tank
+
+
 end

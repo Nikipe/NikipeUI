@@ -3785,7 +3785,7 @@ function NUI:SetPlaterProfile()
                 ["cast_statusbar_fadein_time"] = 0.019999999552965,
                 ["indicator_raidmark_scale"] = 0.8999999761581421,
                 ["aura2_y_offset"] = 26.58000183105469,
-                ["health_selection_overlay"] = "Melli",
+                ["health_selection_overlay"] = "mMediaTag O1",
                 ["health_cutoff_extra_glow"] = true,
                 ["health_animation_time_dilatation"] = 2.6199998855591,
                 ["npc_cache"] = {
@@ -4669,7 +4669,7 @@ function NUI:SetPlaterProfile()
                     ["x"] = 74.16000366210938,
                     ["side"] = 1,
                 },
-                ["cast_statusbar_texture"] = "Melli Dark",
+                ["cast_statusbar_texture"] = "mMediaTag O1",
                 ["auto_toggle_friendly"] = {
                     ["party"] = true,
                     ["raid"] = true,
@@ -4685,7 +4685,7 @@ function NUI:SetPlaterProfile()
                 },
                 ["aura_consolidate"] = true,
                 ["extra_icon_width"] = 24,
-                ["health_statusbar_texture"] = "Melli",
+                ["health_statusbar_texture"] = "mMediaTag O1",
                 ["hook_auto_imported"] = {
                     ["Reorder Nameplate"] = 4,
                     ["Dont Have Aura"] = 1,
@@ -4714,7 +4714,7 @@ function NUI:SetPlaterProfile()
                 ["aura_timer_text_font"] = "WEBSY2J",
                 ["extra_icon_stack_font"] = "DorisPP",
                 ["non_targeted_alpha_enabled"] = true,
-                ["cast_statusbar_bgtexture"] = "Melli",
+                ["cast_statusbar_bgtexture"] = "mMediaTag O1",
                 ["aura2_x_offset"] = 74.16000366210938,
                 ["target_indicator"] = "Composite Reversed",
                 ["extra_icon_show_offensive"] = true,
@@ -9573,7 +9573,7 @@ function NUI:SetPlaterProfile()
                 },
                 ["aura_breakline_space"] = 15,
                 ["ui_parent_buff_level"] = 1,
-                ["health_statusbar_bgtexture"] = "Melli",
+                ["health_statusbar_bgtexture"] = "mMediaTag O1",
                 ["indicator_raidmark_anchor"] = {
                     ["x"] = 0,
                     ["side"] = 9,
@@ -17961,7 +17961,7 @@ function NUI:SetPlaterProfile()
                     ["side"] = 1,
                 },
                 ["extra_icon_show_enrage"] = true,
-                ["cast_statusbar_texture"] = "Melli Dark",
+                ["cast_statusbar_texture"] = "mMediaTag O1",
                 ["auto_toggle_friendly"] = {
                     ["party"] = true,
                     ["raid"] = true,
@@ -18034,7 +18034,7 @@ function NUI:SetPlaterProfile()
                 ["ui_parent_target_strata"] = "BACKGROUND",
                 ["non_targeted_alpha_enabled"] = true,
                 ["use_health_animation"] = true,
-                ["cast_statusbar_bgtexture"] = "Melli",
+                ["cast_statusbar_bgtexture"] = "mMediaTag O1",
                 ["aura2_x_offset"] = 74.160003662109,
                 ["target_indicator"] = "Composite Reversed",
                 ["extra_icon_show_defensive"] = true,
