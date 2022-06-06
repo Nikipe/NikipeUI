@@ -5,11 +5,15 @@
 ### Retail
 
 * Reworked BigWigs Profile.
+* Reworked Plater Profile.
 
 ### Classic
 
 * Added toc support for both SoM and BCC.
 * Enabled Experience bar since classic does not have an honor bar.
+* Added OmniCD Profile to BCC (no OmniCD version for classic era).
+* Added Plater Profile to classic.
+* Reworked Plater Profile.
 
 ## Version 0.1.2
 
