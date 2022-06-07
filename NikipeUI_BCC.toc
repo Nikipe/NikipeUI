@@ -1,6 +1,6 @@
 ## Interface: 20504
 ## Author: Nikipe
-## Version: 0.1.3
+## Version: 0.1.4
 ## Title: Nikipe's ElvUI Edit
 ## Notes: An ElvUI Edit from Nikipe
 ## RequiredDeps: ElvUI
