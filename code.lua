@@ -88,6 +88,13 @@ local InstallerData = {
 				PluginInstallStepComplete:Show()
 			end)
 			PluginInstallFrame.Option3:SetText("BigWigs")
+			PluginInstallFrame.Option4:Show()
+			PluginInstallFrame.Option4:SetScript("OnClick", function() NUI:SetDetailsProfile()
+				E:Print(L["'Details' profile has been set."])
+				PluginInstallStepComplete.message = "Details Profile set"
+				PluginInstallStepComplete:Show()
+			end)
+			PluginInstallFrame.Option4:SetText("Details")
 		end,
 		[E.TBC and 3] = function()
 			PluginInstallFrame.SubTitle:SetFormattedText("Classic Addons")
