@@ -341,6 +341,7 @@ function NUI:SetupLayout(layout)
 	E.db["mMediaTag"]["mRoleSymbols"]["dd"] = "firenew1"
 	E.db["mMediaTag"]["mRoleSymbols"]["heal"] = "heart1"
 	E.db["mMediaTag"]["mRoleSymbols"]["tank"] = "tank1"
+	E.db["mMediaTag"]["mTIcon"] = false
 	E.db["mMediaTag"]["mTags"]["afkname"] = "AFK5"
 	E.db["mMediaTag"]["mTags"]["afkpath"] = "Interface\\AddOns\\ElvUI_mMediaTag\\media\\misc\\afk5.tga"
 	E.db["mMediaTag"]["mTags"]["dndname"] = "DND5"
@@ -349,6 +350,7 @@ function NUI:SetupLayout(layout)
 	E.db["mMediaTag"]["mTags"]["ghostpath"] = "Interface\\AddOns\\ElvUI_mMediaTag\\media\\misc\\skull1.tga"
 	E.db["mMediaTag"]["mTags"]["skullname"] = "SKULL6"
 	E.db["mMediaTag"]["mTags"]["skullpath"] = "Interface\\AddOns\\ElvUI_mMediaTag\\media\\misc\\skull6.tga"
+	if not E.db.movers then E.db.movers = {} end
 	E.db["movers"]["BNETMover"] = "TOP,UIParent,TOP,0,-4"
 	E.db["movers"]["BelowMinimapContainerMover"] = "TOPRIGHT,UIParent,TOPRIGHT,-322,-199"
 	E.db["movers"]["BossButton"] = "BOTTOM,UIParent,BOTTOM,316,221"
