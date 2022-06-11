@@ -4,7 +4,12 @@
 
 ### Retail
 
+* Layout tweaks.
+* Reworked Details profile.
+
 ### Classic
+
+* Layout tweaks.
 
 ## Version 0.1.3
 
