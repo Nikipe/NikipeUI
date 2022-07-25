@@ -6,6 +6,7 @@
 
 * Layout tweaks.
 * Reworked Details profile.
+* Support for 9.2.7
 
 ### Classic
 
