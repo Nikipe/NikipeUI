@@ -7,6 +7,7 @@
 * Layout tweaks.
 * Reworked Details profile.
 * Support for 9.2.7
+* Early support for Wrath (beta)
 
 ### Classic
 
