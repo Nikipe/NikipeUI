@@ -7,11 +7,11 @@
 * Layout tweaks.
 * Reworked Details profile.
 * Support for 9.2.7
-* Early support for Wrath (beta)
 
 ### Classic
 
 * Layout tweaks.
+* Early support for Wrath (beta)
 
 ## Version 0.1.3
 
