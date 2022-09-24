@@ -40,8 +40,9 @@ local InstallerData = {
 	Title = format("|cff4beb2c%s %s|r", MyPluginName, "Installation"),
 	Name = MyPluginName,
 	tutorialImage = "Interface\\AddOns\\NikipeUI\\logo.tga", --tutorialImage = Interface\\AddOns\\MyAddOn\\logo.tga", --If you have a logo you want to use, otherwise it uses the one from ElvUI
-
+-- Install Frame properties
 	Pages = {
+		-- Introduction page
 		[1] = function()
 			PluginInstallFrame.SubTitle:SetFormattedText("Welcome to the installation for %s.", MyPluginName)
 			PluginInstallFrame.Desc1:SetText("This installation process will guide you through a few steps and apply settings to your current ElvUI profile. If you want to be able to go back to your original settings then create a new profile before going through this installation process.")
@@ -50,6 +51,7 @@ local InstallerData = {
 			PluginInstallFrame.Option1:SetScript("OnClick", InstallComplete)
 			PluginInstallFrame.Option1:SetText("Skip Process")
 		end,
+		-- ElvUI Layout page
 		[2] = function()
 			PluginInstallFrame.SubTitle:SetText("Layout")
 			PluginInstallFrame.Desc1:SetText("Click the button below to install the ElvUI layout into your current profile.")
@@ -64,6 +66,7 @@ local InstallerData = {
 			--PluginInstallFrame.Option3:SetScript("OnClick", function() SetupLayout("dps") end)
 			--PluginInstallFrame.Option3:SetText("DPS")
 		end,
+		-- Retail M+ AddOn profiles
 		[E.Retail and 3] = function()
 			PluginInstallFrame.SubTitle:SetFormattedText("Mythic+ Addons")
 			PluginInstallFrame.Desc1:SetText("Import various profiles for mythic+ addons.")
@@ -88,24 +91,18 @@ local InstallerData = {
 				PluginInstallStepComplete:Show()
 			end)
 			PluginInstallFrame.Option3:SetText("BigWigs")
-			PluginInstallFrame.Option4:Show()
-			PluginInstallFrame.Option4:SetScript("OnClick", function() NUI:SetDetailsProfile()
-				E:Print(L["'Details' profile has been set."])
-				PluginInstallStepComplete.message = "Details Profile set"
-				PluginInstallStepComplete:Show()
-			end)
-			PluginInstallFrame.Option4:SetText("Details")
 		end,
-		[E.TBC and 3] = function()
-			PluginInstallFrame.SubTitle:SetFormattedText("Classic Addons")
-			PluginInstallFrame.Desc1:SetText("Import various profiles for classic WoW The Burning Crusade addons.")
+		-- WotLK Classic AddOn profiles
+		[E.Wrath and 3] = function()
+			PluginInstallFrame.SubTitle:SetFormattedText("Classic Wrath Of The Lich King Addons")
+			PluginInstallFrame.Desc1:SetText("Import various AddOn profiles for Wrath Of The Lich King Classic.")
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", function() NUI:SetWarpDepleteProfile()
 				E:Print(L["'Questie' profile has been set."])
 				PluginInstallStepComplete.message = "Questie Profile set"
 				PluginInstallStepComplete:Show()
 			end)
-			PluginInstallFrame.Option1:SetText("Questie")
+			PluginInstallFrame.Option1:SetText("VIP 1")
 			PluginInstallFrame.Option2:Show()
 			PluginInstallFrame.Option2:SetScript("OnClick", function() NUI:SetOmniCDProfile()
 				E:Print(L["OmniCD profile has been set."])
@@ -121,6 +118,7 @@ local InstallerData = {
 			end)
 			PluginInstallFrame.Option3:SetText("BigWigs")
 		end,
+		-- Classic Season Of Mastery AddOn profiles
 		[E.Classic and 3] = function()
 			PluginInstallFrame.SubTitle:SetFormattedText("Classic Addons")
 			PluginInstallFrame.Desc1:SetText("Import various profiles for classic era / Season of Mastery addons.")
@@ -132,6 +130,7 @@ local InstallerData = {
 			end)
 			PluginInstallFrame.Option1:SetText("Questie")
 		end,
+		-- Nameplate profiles
 		[4] = function()
 			PluginInstallFrame.SubTitle:SetFormattedText("Nameplates")
 			PluginInstallFrame.Desc1:SetText("Import the Best Plater Profile. All credits for this go to WEBS -Y2J. Check out his Wago.io profile.")
@@ -143,6 +142,7 @@ local InstallerData = {
 			end)
 			PluginInstallFrame.Option1:SetText("Plater")
 		end,
+		-- Details profile
 		[5] = function()
 			PluginInstallFrame.SubTitle:SetText("Details")
 			PluginInstallFrame.Desc1:SetText("Import my Details Profile")
@@ -154,7 +154,8 @@ local InstallerData = {
 			end)
 			PluginInstallFrame.Option1:SetText("Details")
 		end,
-		[6] = function()
+		-- Retail WeakAuras
+		[E. Retail and 6] = function()
 			PluginInstallFrame.SubTitle:SetText("WeakAuras")
 			PluginInstallFrame.Desc1:SetText("Import some of the best WeakAuras for mythic+.")
 			PluginInstallFrame.Option1:Show()
@@ -165,6 +166,31 @@ local InstallerData = {
 			end)
 			PluginInstallFrame.Option1:SetText("WeakAuras")
 		end,
+		-- WotLK WeakAuras
+		[E.Wrath and 6] = function()
+			PluginInstallFrame.SubTitle:SetText("Wrath Of The Lich King WeakAuras")
+			PluginInstallFrame.Desc1.SetText("Import Wrath Of The Lich King WeakAuras")
+			PluginInstallFrame.Option1.Show()
+			PluginInstallFrame.Option1:SetScript("OnClick", function() NUI:SetWeakAuras()
+				E.Print(L["'WeakAuras' imported"])
+				PluginInstallStepComplete.message = "WeakAuras imported"
+				PluginInstallStepComplete:Show()
+			end)
+			PluginInstallFrame.Option1:SetText("WeakAuras")
+		end,
+		-- Classic Season Of Mastery WeakAuras
+		[E.Classic and 6] = function ()
+			PluginInstallFrame.SubTitle:SetText("Classic SoM WeakAuras")
+			PluginInstallFrame.Desc1.SetText("Import Classic Season Of Mastery WeakAuras")
+			PluginInstallFrame.Option1.Show()
+			PluginInstallFrame.Option1:SetScript("OnClick", function () NUI:SetWeakAuras()
+				E.Print(L["'WeakAuras' imported"])
+				PluginInstallStepComplete.message = "WeakAuras imported"
+				PluginInstallStepComplete.Show()
+			end)
+			PluginInstallFrame.Option1.Show()
+		end,
+		-- PvP profiles
 		[7] = function()
 			PluginInstallFrame.SubTitle:SetText("Capping")
 			PluginInstallFrame.Desc1:SetText("Import my Capping Profile")
@@ -176,6 +202,7 @@ local InstallerData = {
 			end)
 			PluginInstallFrame.Option1:SetText("Capping")
 		end,
+		-- Installation complete step
 		[8] = function()
 			PluginInstallFrame.SubTitle:SetText("Installation Complete")
 			PluginInstallFrame.Desc1:SetText("You have completed the installation process.")
@@ -185,15 +212,18 @@ local InstallerData = {
 			PluginInstallFrame.Option1:SetText("Finished")
 		end,
 	},
+	-- Install Frame titles
 	StepTitles = {
 		[1] = "Welcome",
 		[2] = "Layout",
 		[E.Retail and 3] = "Mythic+ Addons",
-		[E.TBC and 3] = "Classic Addons",
+		[E.Wrath and 3] = "Classic Addons",
 		[E.Classic and 3] = "Classic Addons",
 		[4] = "Nameplates",
 		[5] = "Details",
-		[6] = "WeakAuras",
+		[E.Retail and 6] = "WeakAuras",
+		[E.Wrath and 6] = "WeakAuras",
+		[E.Classic and 6] = "WeakAuras",
 		[7] = "PvP",
 		[8] = "Installation Complete",
 	},

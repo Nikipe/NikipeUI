@@ -5,8 +5,6 @@ local NUI = E:GetModule("Nikipe UI");
 
 function NUI:SetupLayout(layout)
 	--LAYOUT GOES HERE
-
-	--profile import
 	if E.Retail then
 		E.db["WT"]["announcement"]["goodbye"]["text"] = "Thank you <3"
 		E.db["WT"]["announcement"]["interrupt"]["enable"] = false
@@ -28,7 +26,22 @@ function NUI:SetupLayout(layout)
 		E.db["WT"]["social"]["chatBar"]["enable"] = false
 		E.db["WT"]["social"]["friendList"]["textures"]["factionIcon"] = true
 		E.db["WT"]["social"]["friendList"]["useNoteAsName"] = true
+
+		--private settings import
+		E.private["WT"]["combat"]["talentManager"]["pvpTalent"] = true
+		E.private["WT"]["maps"]["instanceDifficulty"]["enable"] = true
+		E.private["WT"]["maps"]["minimapButtons"]["backdrop"] = false
+		E.private["WT"]["maps"]["minimapButtons"]["buttonSize"] = 25
+		E.private["WT"]["maps"]["minimapButtons"]["buttonsPerRow"] = 8
+		E.private["WT"]["maps"]["minimapButtons"]["calendar"] = true
+		E.private["WT"]["maps"]["minimapButtons"]["garrison"] = true
+		E.private["WT"]["maps"]["minimapButtons"]["spacing"] = 0
+		E.private["WT"]["misc"]["autoScreenshot"] = true
+		E.private["WT"]["quest"]["objectiveTracker"]["cosmeticBar"]["texture"] = "Melli"
+		E.private["WT"]["skins"]["shadow"] = false
 	end
+
+	--normal ElvUI settings
 	E.db["actionbar"]["bar1"]["backdropSpacing"] = 1
 	E.db["actionbar"]["bar1"]["buttonSize"] = 28
 	E.db["actionbar"]["bar1"]["buttonSpacing"] = 1
@@ -237,17 +250,16 @@ function NUI:SetupLayout(layout)
 	E.db["chat"]["chatHistory"] = false
 	E.db["chat"]["editBoxPosition"] = "ABOVE_CHAT"
 	E.db["chat"]["emotionIcons"] = false
-	E.db["chat"]["font"] = "Gotham Narrow Ultra"
-	E.db["chat"]["fontOutline"] = "THICKOUTLINE"
+	E.db["chat"]["font"] = "Univers"
 	E.db["chat"]["fontSize"] = 12
 	E.db["chat"]["lfgIcons"] = false
 	E.db["chat"]["panelBackdrop"] = "HIDEBOTH"
 	E.db["chat"]["panelHeight"] = 210
-	E.db["chat"]["panelHeightRight"] = 181
+	E.db["chat"]["panelHeightRight"] = 266
 	E.db["chat"]["panelWidth"] = 450
-	E.db["chat"]["panelWidthRight"] = 225
+	E.db["chat"]["panelWidthRight"] = 230
 	E.db["chat"]["separateSizes"] = true
-	E.db["chat"]["tabFont"] = "Gotham Narrow Ultra"
+	E.db["chat"]["tabFont"] = "Univers"
 	E.db["chat"]["tabFontOutline"] = "OUTLINE"
 	E.db["chat"]["tabFontSize"] = 11
 	E.db["convertPages"] = true
@@ -294,7 +306,7 @@ function NUI:SetupLayout(layout)
 	E.db["databars"]["statusbar"] = "mMediaTag O1"
 	E.db["databars"]["threat"]["enable"] = false
 	E.db["databars"]["transparent"] = false
-	E.db["datatexts"]["font"] = "Gotham Narrow Ultra"
+	E.db["datatexts"]["font"] = "Univers"
 	E.db["datatexts"]["fontOutline"] = "OUTLINE"
 	E.db["datatexts"]["fontSize"] = 14
 	E.db["datatexts"]["panels"]["LeftChatDataPanel"]["2"] = "System"
@@ -321,7 +333,7 @@ function NUI:SetupLayout(layout)
 	E.db["general"]["backdropfadecolor"]["r"] = 0.058823529411765
 	E.db["general"]["bottomPanel"] = false
 	E.db["general"]["font"] = "Gotham Narrow Ultra"
-	E.db["general"]["itemLevel"]["itemLevelFont"] = "Gotham Narrow Ultra"
+	E.db["general"]["itemLevel"]["itemLevelFont"] = "Nimrod MT"
 	E.db["general"]["loginmessage"] = false
 	E.db["general"]["lootRoll"]["nameFont"] = "Univers"
 	E.db["general"]["lootRoll"]["statusBarTexture"] = "Melli"
@@ -337,7 +349,7 @@ function NUI:SetupLayout(layout)
 	E.db["general"]["valuecolor"]["b"] = 0.72941017150879
 	E.db["general"]["valuecolor"]["g"] = 0.54901838302612
 	E.db["general"]["valuecolor"]["r"] = 0.95686066150665
-	E.db["mMediaTag"]["mPluginVersion"] = "2.81"
+	E.db["mMediaTag"]["mPluginVersion"] = "2.80"
 	E.db["mMediaTag"]["mRoleSymbols"]["dd"] = "firenew1"
 	E.db["mMediaTag"]["mRoleSymbols"]["heal"] = "heart1"
 	E.db["mMediaTag"]["mRoleSymbols"]["tank"] = "tank1"
@@ -372,10 +384,9 @@ function NUI:SetupLayout(layout)
 	E.db["movers"]["MinimapMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-1,0"
 	E.db["movers"]["ObjectiveFrameMover"] = "TOPRIGHT,UIParent,TOPRIGHT,-48,-4"
 	E.db["movers"]["ReputationBarMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-177,21"
-	E.db["movers"]["RightChatMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-206,21"
+	E.db["movers"]["RightChatMover"] = "BOTTOMRIGHT,UIParent,BOTTOMRIGHT,-357,218"
 	E.db["movers"]["SquareMinimapButtonBarMover"] = "BOTTOMRIGHT,UIParent,BOTTOMRIGHT,-4,296"
 	E.db["movers"]["TargetPowerBarMover"] = "BOTTOM,UIParent,BOTTOM,310,263"
-	E.db["movers"]["TooltipMover"] = "BOTTOMRIGHT,UIParent,BOTTOMRIGHT,-493,506"
 	E.db["movers"]["VehicleSeatMover"] = "TOPRIGHT,UIParent,TOPRIGHT,-319,-231"
 	E.db["movers"]["WTMinimapButtonBarAnchor"] = "TOPLEFT,UIParent,TOPLEFT,4,-4"
 	E.db["movers"]["ZoneAbility"] = "TOP,UIParent,TOP,77,-515"
@@ -383,7 +394,6 @@ function NUI:SetupLayout(layout)
 	E.db["tooltip"]["cursorAnchor"] = true
 	E.db["tooltip"]["font"] = "Gotham Narrow Ultra"
 	E.db["tooltip"]["headerFont"] = "Gotham Narrow Ultra"
-	E.db["tooltip"]["healthBar"]["font"] = "Gotham Narrow Ultra"
 	E.db["tooltip"]["visibility"]["combatOverride"] = "SHIFT"
 	E.db["unitframe"]["colors"]["colorhealthbyvalue"] = false
 	E.db["unitframe"]["colors"]["healthclass"] = true
@@ -391,8 +401,6 @@ function NUI:SetupLayout(layout)
 	E.db["unitframe"]["fontOutline"] = "THICKOUTLINE"
 	E.db["unitframe"]["fontSize"] = 15
 	E.db["unitframe"]["statusbar"] = "mMediaTag O1"
-	E.db["unitframe"]["units"]["boss"]["health"]["text_format"] = ""
-	E.db["unitframe"]["units"]["boss"]["power"]["enable"] = false
 	E.db["unitframe"]["units"]["party"]["debuffs"]["anchorPoint"] = "LEFT"
 	E.db["unitframe"]["units"]["party"]["health"]["text_format"] = ""
 	E.db["unitframe"]["units"]["party"]["power"]["text_format"] = ""
@@ -403,12 +411,10 @@ function NUI:SetupLayout(layout)
 	E.db["unitframe"]["units"]["player"]["RestIcon"]["enable"] = false
 	E.db["unitframe"]["units"]["player"]["aurabar"]["enable"] = false
 	E.db["unitframe"]["units"]["player"]["buffs"]["attachTo"] = "FRAME"
-	E.db["unitframe"]["units"]["player"]["buffs"]["countFont"] = "Gotham Narrow Ultra"
 	E.db["unitframe"]["units"]["player"]["castbar"]["enable"] = false
 	E.db["unitframe"]["units"]["player"]["castbar"]["width"] = 220
 	E.db["unitframe"]["units"]["player"]["classbar"]["enable"] = false
 	E.db["unitframe"]["units"]["player"]["debuffs"]["attachTo"] = "BUFFS"
-	E.db["unitframe"]["units"]["player"]["debuffs"]["countFont"] = "Gotham Narrow Ultra"
 	E.db["unitframe"]["units"]["player"]["health"]["position"] = "BOTTOMRIGHT"
 	E.db["unitframe"]["units"]["player"]["health"]["text_format"] = "[health:current:shortvalue]"
 	E.db["unitframe"]["units"]["player"]["health"]["xOffset"] = 3
@@ -423,22 +429,16 @@ function NUI:SetupLayout(layout)
 	E.db["unitframe"]["units"]["player"]["raidRoleIcons"]["yOffset"] = 5
 	E.db["unitframe"]["units"]["player"]["width"] = 220
 	E.db["unitframe"]["units"]["raid"]["health"]["position"] = "TOP"
-	E.db["unitframe"]["units"]["raid"]["health"]["text_format"] = ""
 	E.db["unitframe"]["units"]["raid"]["name"]["position"] = "BOTTOM"
-	E.db["unitframe"]["units"]["raid"]["name"]["text_format"] = "[name:short]"
-	E.db["unitframe"]["units"]["raid"]["power"]["enable"] = false
-	E.db["unitframe"]["units"]["raid"]["roleIcon"]["position"] = "TOP"
-	E.db["unitframe"]["units"]["raid"]["roleIcon"]["yOffset"] = -2
-	E.db["unitframe"]["units"]["raid"]["width"] = 100
+	E.db["unitframe"]["units"]["raid"]["roleIcon"]["position"] = "TOPLEFT"
 	E.db["unitframe"]["units"]["raid40"]["health"]["text_format"] = ""
 	E.db["unitframe"]["units"]["raid40"]["height"] = 30
 	E.db["unitframe"]["units"]["raid40"]["name"]["text_format"] = "[name:short]"
 	E.db["unitframe"]["units"]["raid40"]["width"] = 100
 	E.db["unitframe"]["units"]["target"]["aurabar"]["enable"] = false
-	E.db["unitframe"]["units"]["target"]["buffs"]["countFont"] = "Gotham Narrow Ultra"
+	E.db["unitframe"]["units"]["target"]["buffs"]["countFont"] = "Nimrod MT"
 	E.db["unitframe"]["units"]["target"]["buffs"]["yOffset"] = 15
 	E.db["unitframe"]["units"]["target"]["castbar"]["width"] = 220
-	E.db["unitframe"]["units"]["target"]["debuffs"]["countFont"] = "Gotham Narrow Ultra"
 	E.db["unitframe"]["units"]["target"]["health"]["position"] = "BOTTOMRIGHT"
 	E.db["unitframe"]["units"]["target"]["health"]["text_format"] = "[health:current:shortvalue]"
 	E.db["unitframe"]["units"]["target"]["health"]["xOffset"] = 3
@@ -456,20 +456,13 @@ function NUI:SetupLayout(layout)
 	E.db["unitframe"]["units"]["targettarget"]["name"]["text_format"] = "[name:short]"
 	E.db["unitframe"]["units"]["targettarget"]["power"]["enable"] = false
 
-	--private import
-	if E.Retail then
-		E.private["WT"]["combat"]["talentManager"]["pvpTalent"] = true
-		E.private["WT"]["maps"]["instanceDifficulty"]["enable"] = true
-		E.private["WT"]["maps"]["minimapButtons"]["backdrop"] = false
-		E.private["WT"]["maps"]["minimapButtons"]["buttonSize"] = 25
-		E.private["WT"]["maps"]["minimapButtons"]["buttonsPerRow"] = 8
-		E.private["WT"]["maps"]["minimapButtons"]["calendar"] = true
-		E.private["WT"]["maps"]["minimapButtons"]["garrison"] = true
-		E.private["WT"]["maps"]["minimapButtons"]["spacing"] = 0
-		E.private["WT"]["misc"]["autoScreenshot"] = true
-		E.private["WT"]["quest"]["objectiveTracker"]["cosmeticBar"]["texture"] = "Melli"
-		E.private["WT"]["skins"]["shadow"] = false
-	end
+
+	--global settings import
+	E.global["datatexts"]["settings"]["Gold"]["goldCoins"] = false
+	E.global["datatexts"]["settings"]["Gold"]["goldFormat"] = "SHORTINT"
+
+
+	--private settings import
 	E.private["general"]["dmgfont"] = "Gotham Narrow Ultra"
 	E.private["general"]["glossTex"] = "mMediaTag O1"
 	E.private["general"]["namefont"] = "Gotham Narrow Ultra"
@@ -480,14 +473,8 @@ function NUI:SetupLayout(layout)
 	E.private["nameplates"]["enable"] = false
 	E.private["skins"]["parchmentRemoverEnable"] = true
 
-	--global import
-	E.global["datatexts"]["settings"]["Gold"]["goldCoins"] = false
-	E.global["datatexts"]["settings"]["Gold"]["goldFormat"] = "SHORTINT"
-
-
-
 	--classic only stuff
-	if E.TBC then
+	if E.Wrath then
 		E.db["databars"]["experience"]["enable"] = true
 		E.db["databars"]["experience"]["textFormat"] = "NONE"
 		E.db["databars"]["colors"]["experience"]["a"] = 1
